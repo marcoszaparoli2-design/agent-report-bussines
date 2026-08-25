@@ -1,0 +1,11 @@
+# Delivery channel + schedule. The secret itself never lives here -- only the
+# name of the environment variable that holds it (see .env.example).
+
+channels:
+  default:
+    type: none   # none | webhook -- no delivery adapter ships in the MVP
+    webhook_env_var: DELIVERY_WEBHOOK_URL
+
+schedule:
+  time: "07:00"
+  timezone: "UTC"

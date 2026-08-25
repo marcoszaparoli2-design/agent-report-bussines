@@ -1,0 +1,16 @@
+-- Placeholder for the real warehouse query that materializes this metric's
+-- daily series by entity (one row per date x segment).
+--
+-- The MVP does not implement a warehouse adapter -- it reads
+-- fixtures/metrics/conversion_rate.csv through FixtureDataSource instead.
+-- A real adapter (e.g. BigQuery, Postgres) implements the same DataSource
+-- interface (src/data/sources/base.py) and would run a query shaped like:
+--
+-- SELECT
+--   event_date   AS date,
+--   segment      AS entity,
+--   conversions / NULLIF(sessions, 0) AS value,
+--   sessions     AS volume
+-- FROM <your_fact_table>
+-- WHERE event_date <= @as_of_date
+-- GROUP BY event_date, segment;

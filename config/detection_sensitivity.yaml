@@ -1,0 +1,20 @@
+# Detection-sensitivity parameters -- how sensitive the detector/ranker is.
+# Never put business baselines here (what "normal" looks like); those are
+# computed dynamically per-entity by anomaly_detection/deviation_model.py.
+
+priority_weights:
+  # Configurable multipliers applied to each factor of the relevance formula:
+  #   relevance = (magnitude * w_magnitude) * (impact * w_impact)
+  #             * (persistence * w_persistence) * (confidence * w_confidence)
+  #             * sensitivity
+  magnitude: 1.0
+  impact: 1.0
+  persistence: 1.0
+  confidence: 1.0
+
+queues:
+  top_n_negative: 5
+  top_n_positive: 3
+
+persistence:
+  milestones_days: [7, 15, 30]

@@ -1,0 +1,12 @@
+name: conversion_rate
+direction: higher_is_better
+baseline_method: median_mad
+impact_method: exposure_weighted_rate
+dimension: segment
+severity:
+  watch: 2.0
+  high: 3.0
+window_days: 56
+min_history_days: 14
+min_volume_share: 0.01
+sensitivity: 1.0

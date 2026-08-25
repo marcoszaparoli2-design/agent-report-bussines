@@ -1,0 +1,14 @@
+-- Placeholder for the real warehouse query that materializes this metric's
+-- daily series by entity (one row per date x region).
+--
+-- The MVP does not implement a warehouse adapter -- it reads
+-- fixtures/metrics/revenue.csv through FixtureDataSource instead.
+-- A real adapter would run a query shaped like:
+--
+-- SELECT
+--   order_date AS date,
+--   region     AS entity,
+--   SUM(amount) AS value
+-- FROM <your_fact_table>
+-- WHERE order_date <= @as_of_date
+-- GROUP BY order_date, region;

@@ -1,0 +1,14 @@
+# Calendar exceptions excluded from the baseline history window (dates are
+# still scored today, they're only excluded when building historical context).
+# Fill these in with your own business's real dates -- left empty here since
+# this is a generic project skeleton, not tied to any specific company.
+
+holidays: []
+# holidays:
+#   - "2024-01-01"
+#   - "2024-12-25"
+
+atypical_periods: []
+# atypical_periods:
+#   - start: "2024-11-20"
+#     end: "2024-11-30"
